@@ -1,14 +1,18 @@
-import 'package:ecommercecourse/core/bindings/intialbindings.dart';
-import 'package:ecommercecourse/core/localization/translation.dart';
-import 'package:ecommercecourse/core/services/sharedpreferences.dart';
-import 'package:ecommercecourse/routes.dart';
+
+import 'package:consultancy/controller/local_controller.dart';
+import 'package:consultancy/core/bindings/intial_bindings.dart';
+import 'package:consultancy/core/constant/app_colors.dart';
+import 'package:consultancy/core/constant/app_pages_routes.dart';
+import 'package:consultancy/core/localization/app_translation.dart';
+import 'package:consultancy/core/services/shared_preferences_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'core/localization/changelocal.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await initialServices();
+  await Get.putAsync(() => SharedPreferencesService().init());
+  InitialBindings().dependencies();
   runApp(const MyApp());
 }
 
@@ -18,14 +22,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     LocaleController controller = Get.put(LocaleController());
     return GetMaterialApp(
-      translations: MyTranslation(),
+      translations: AppTranslation(),
       debugShowCheckedModeBanner: false,
-      title: 'Ecommerce Course',
+      title: 'Consultancy',
+      color: AppColors.primary,
       locale: controller.language,
       theme: controller.appTheme,
       initialBinding: InitialBindings(),
-      // routes: routes,
-      getPages: routes,
+      getPages: AppPagesRoutes.appPages,
     );
   }
 }

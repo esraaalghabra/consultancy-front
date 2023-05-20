@@ -1,6 +1,6 @@
-# ecommercecourse
+# consultancy
 
-Ecommerce App
+Consultancy App
 
 ## Getting Started
 

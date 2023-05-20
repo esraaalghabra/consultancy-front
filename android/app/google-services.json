@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1097359395932:android:2259295de14566a61f2a99",
         "android_client_info": {
-          "package_name": "com.waelabohamza.ecommercecourse"
+          "package_name": "com.pure.soft.consultancy"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "1097359395932-81ko88e4drvmu5i77epa9vsbrcoutc90.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.waelabohamza.ecommercecourse",
+            "package_name": "com.pure.soft.consultancy",
             "certificate_hash": "6e8b6f7e500c2edeaff352c6e1ba5028139cc56b"
           }
         },

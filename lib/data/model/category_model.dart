@@ -1,27 +1,17 @@
-class MainCategoryModel {
+
+import 'package:consultancy/data/datasource/static/user_home_data.dart';
+
+class CategoryModel{
   int? id;
   String? name;
-  String? details;
   String? photo;
-  int? active;
 
-  MainCategoryModel({this.id, this.name, this.details, this.photo, this.active});
+  CategoryModel({this.id, this.name, this.photo});
 
-  MainCategoryModel.fromJson(Map<String, dynamic> json) {
+  CategoryModel.fromJson(Map<String, dynamic> json,String lang) {
     id = json['id'];
-    name = json['name'];
-    details = json['details'];
-    photo = json['photo'];
-    active = json['active'];
-  }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
-    data['name'] = name;
-    data['details'] = details;
-    data['photo'] = photo;
-    data['active'] = active;
-    return data;
+    name = UserHomeData.lang == 'ar' ? json['name_ar'] : json['name_en'];
+    photo = json['photo'];
   }
 }
